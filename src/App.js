@@ -11,16 +11,12 @@ import Products from "./pages/Products";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar />
-
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={SingUp} />
-          <Route path="/products" component={Products} />
-        </Switch>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/signup" component={SingUp} />
+        <Route path="/products" component={Products} />
+      </Switch>
     </div>
   );
 }
