@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import signUpSlideReducer from "../store/signup/reducer";
 
 const reducer = combineReducers({
-  //slice reducers here
+  signup: signUpSlideReducer,
   //feed: sliceFeedReducer
 });
 
