@@ -12,8 +12,15 @@ export default function Navbar() {
   return (
     <div>
       <h1>Hey i am a navbar!</h1>
-      <button>Sign-up</button>
-      <button>Logout</button>
+      <Link to="/">
+        <button>Home Page</button>
+      </Link>
+      <Link to="/signup">
+        <button>Sign-up</button>
+      </Link>
+      <Link to="/login">
+        <button>Log In</button>
+      </Link>
     </div>
   );
 }

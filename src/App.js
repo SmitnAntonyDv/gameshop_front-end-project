@@ -11,6 +11,7 @@ import Products from "./pages/Products";
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/login" component={LoginPage} />
