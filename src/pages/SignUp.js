@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { userSignUp } from "../store/signup/actions";
+import { singUp } from "../store/signup/actions";
 
 export default function SingUp() {
   const dispatch = useDispatch();
@@ -10,22 +11,22 @@ export default function SingUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleSingUp(event) {
+  function handleSingUp(event) {
     event.preventDefault();
-    console.log(name, email, password);
+    console.log("INSIDE handleSignUp", name, email, password);
 
-    const API_URL = "http://localhost:4000";
-    const response = await axios.post(`${API_URL}/auth/signup`, {
-      name: name,
-      email: email,
-      password: password,
-    });
+    // const API_URL = "http://localhost:4000";
+    // const response = await axios.post(`${API_URL}/auth/signup`, {
+    //   name: name,
+    //   email: email,
+    //   password: password,
+    // });
 
-    const action = {
-      type: "SIGNUP_SUCCESS",
-      payload: response.data,
-    };
-    dispatch(action);
+    // const action = {
+    //   type: "SIGNUP_SUCCESS",
+    //   payload: response.data,
+    // };
+    dispatch(singUp(name, email, password));
   }
 
   return (

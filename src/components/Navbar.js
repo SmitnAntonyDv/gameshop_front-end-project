@@ -12,8 +12,8 @@ export default function Navbar() {
   }
 
   return (
-    <div>
-      <h1>Hey i am a navbar!</h1>
+    <div className="navStyle">
+      <h1>The HuB</h1>
       <Link to="/">
         <button>Home Page</button>
       </Link>

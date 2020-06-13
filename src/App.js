@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import "./App.scss";
 import { Switch, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";

@@ -15,25 +15,29 @@ export default function Products() {
   return (
     <div>
       <h1>Products available:</h1>
-
-      {products ? (
-        products.map((product) => {
-          return (
-            <h2 key={product.id}>
-              {product.name}
-              <button
-                onClick={(e) => {
-                  dispatch(addToCart(product.id));
-                }}
-              >
-                add to cart
-              </button>
-            </h2>
-          );
-        })
-      ) : (
-        <p>loading</p>
-      )}
+      <ul>
+        {products ? (
+          products.map((product) => {
+            return (
+              <li key={product.id}>
+                <h2>{product.name}</h2>
+                <div className="productpicture">
+                  <img src={product.imageUrl} />
+                </div>
+                <button
+                  onClick={(e) => {
+                    dispatch(addToCart(product.id));
+                  }}
+                >
+                  add to cart
+                </button>
+              </li>
+            );
+          })
+        ) : (
+          <p>loading</p>
+        )}
+      </ul>
 
       <p></p>
     </div>
