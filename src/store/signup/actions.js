@@ -1,3 +1,6 @@
+import axios from "axios";
+const API_URL = "http://localhost:4000";
+
 export function newUserSignUp(data) {
   return {
     type: "USER_SIGN_UP",
@@ -5,17 +8,25 @@ export function newUserSignUp(data) {
   };
 }
 
-// export async function userSignUp(dispatch, getState) {
-//   console.log("This works?");
-// }
-// export async function handleSingUp(event) {
-//   event.preventDefault();
-//   console.log(name, email, password);
+export function singUpData(data) {
+  console.log("what is my data?", data);
+  return {
+    type: "SIGNUP_SUCCESS",
+    payload: data,
+  };
+}
 
-//   const API_URL = "http://localhost:4000";
-//   const response = await axios.post(`${API_URL}/auth/signup`, {
-//     name: name,
-//     email: email,
-//     password: password,
-//   });
-// }
+//signup thunk action
+export function singUp(name, email, password) {
+  console.log("SIGNUP FUNCTION inside actions.js");
+
+  return async function thunk(dispatch, getState) {
+    const response = await axios.post(`${API_URL}/auth/signup`, {
+      name: name,
+      email: email,
+      password: password,
+    });
+
+    dispatch(singUpData(response.data));
+  };
+}
