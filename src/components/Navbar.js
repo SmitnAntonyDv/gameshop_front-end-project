@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { authUser } from "../store/auth/login/selector";
 
 export default function Navbar() {
   const dispatch = useDispatch();
+  const loggedInUser = useSelector(authUser);
 
   function singUp() {
     dispatch();
@@ -21,6 +23,7 @@ export default function Navbar() {
       <Link to="/login">
         <button>Log In</button>
       </Link>
+      {!loggedInUser ? [] : <p>Welcome back, {loggedInUser}</p>}
     </div>
   );
 }

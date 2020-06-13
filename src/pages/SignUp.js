@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { userSignUp } from "../store/signup/actions";
 
 export default function SingUp() {
   const dispatch = useDispatch();
