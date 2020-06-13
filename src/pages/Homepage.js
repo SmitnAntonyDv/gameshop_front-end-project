@@ -1,4 +1,5 @@
 import React from "react";
+import Products from "./Products";
 
 export default function Homepage() {
   return (
@@ -15,6 +16,7 @@ export default function Homepage() {
           <option>{"MMORPG"}</option>
         </select>
       </div>
+      <Products />
     </div>
   );
 }
